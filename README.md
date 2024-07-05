@@ -2,7 +2,7 @@
 
 Nexus Portfolio is a simple acrylic design portfolio built using Next.js, Prisma, NextAuth, Tailwind CSS, Framer Motion, React Three Fiber, and TypeScript. This project uses Aiven.io to host the PostgreSQL instance, making it reliable and scalable for various development needs. The project is open source and available for others to reuse with proper attribution to the original author. Any changes or pull requests will be reviewed before acceptance.
 
-![Nexus Portfolio Interface](./../nexus-portfolio/public/images/screenshot.png)
+![Nexus Portfolio Interface](https://github.com/alphadevking/nexus-portfolio/blob/main/public/images/screenshot.png)
 
 ## Getting Started
 
