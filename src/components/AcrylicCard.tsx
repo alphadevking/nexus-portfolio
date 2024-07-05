@@ -38,8 +38,8 @@ const AcrylicCard = ({ year, title, company, description, index, skill, image }:
             whileInView={{
                 y: [0, -5, 0],
                 transition: {
-                    repeat: Infinity,
-                    repeatType: "reverse",
+                    // repeat: Infinity,
+                    // repeatType: "reverse",
                     duration: 0.5
                 }
             }}
@@ -92,8 +92,8 @@ const TextDesignCard = ({ year, title, company, description, index, skill, image
             whileInView={{
                 y: [0, -5, 0],
                 transition: {
-                    repeat: Infinity,
-                    repeatType: "reverse",
+                    // repeat: Infinity,
+                    // repeatType: "reverse",
                     duration: 0.5
                 }
             }}

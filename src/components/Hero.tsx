@@ -33,6 +33,8 @@ export default function Hero() {
 
     const progress = ((currentImage + 1) / (images.length - 1)) * 100;
 
+    const canDrag = currentImage >= 0 && currentImage < images.length - 2 || currentImage < images.length - 2;
+
     return (
         <header className="flex flex-col md:flex-row items-center justify-between min-h-screen p-10 pt-16 bg-purple-900/5 text-white">
             <div className="md:w-1/3 flex flex-col items-start">
@@ -92,15 +94,22 @@ export default function Hero() {
                         Explore My Work
                     </Link>
                 </motion.div>
-
             </div>
             <div className="md:w-2/3 mt-10 md:mt-0 relative w-full h-96 overflow-hidden" ref={containerRef}>
                 <motion.div
                     className="absolute top-0 left-0 w-full h-full flex transition-transform duration-500 ease-in-out gap-4"
                     animate={controls}
-                    drag="x"
+                    drag={canDrag ? "x" : false}
                     dragConstraints={containerRef}
                     ref={carouselRef}
+                    whileTap={{ cursor: canDrag ? "grabbing" : "default" }}
+                    onDragEnd={(event, info) => {
+                        if (info.offset.x < -50 && currentImage < images.length - 2) {
+                            handleNext();
+                        } else if (info.offset.x > 50 && currentImage > 0) {
+                            handlePrev();
+                        }
+                    }}
                 >
                     {images.map((image, index) => (
                         <div key={index} className="flex-none w-1/2 h-full relative px-5 rounded-xl overflow-hidden">
