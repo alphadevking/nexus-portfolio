@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Link } from "@nextui-org/react";
 import { images } from "./data";
 
-const introduction = "Hi, I'm Favour Orukpe";
+const introduction = "I'm Favour Orukpe";
 const summary = "Full-Stack Software Engineer | Frontend Software Developer | Backend Software Developer | React, React Native, NextJS, TypeScript, PHP, Python, ViteJS, NestJs, Prisma ORM, C/C++, C#, ASP.NET, Laravel, Django";
 
 export default function Hero() {
@@ -36,10 +36,18 @@ export default function Hero() {
     const canDrag = currentImage >= 0 && currentImage < images.length - 2 || currentImage < images.length - 2;
 
     return (
-        <header className="flex flex-col md:flex-row items-center justify-between min-h-screen p-10 pt-16 bg-purple-900/5 text-white">
-            <div className="md:w-1/3 flex flex-col items-start">
+        <header className="flex flex-col md:flex-row items-center justify-between min-h-screen p-10 pt-16 bg-purple-900/5 text-white gap-2">
+            <div className="md:w-1/3 flex flex-col items-start gap-0.5">
+                <motion.h4
+                    className="text-lg font-semibold"
+                    initial={{ y: -50, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                >
+                    Hi,
+                </motion.h4>
                 <motion.h1
-                    className="text-5xl md:text-6xl font-bold"
+                    className="text-4xl md:text-5xl font-bold"
                     initial={{ y: -50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -87,7 +95,7 @@ export default function Hero() {
                 >
                     <Link
                         as={'button'}
-                        href=""
+                        href="https://github.com/alphadevking/"
                         size="md"
                         className="relative overflow-hidden bg-gradient-to-br hover:bg-gradient-to-tr from-purple-900 via-gray-950 to-purple-950 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transform transition-all duration-500 hover:scale-105"
                     >
