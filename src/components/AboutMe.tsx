@@ -26,7 +26,7 @@ export default function AboutMe() {
     const options = {
         root: null,
         rootMargin: "0px",
-        threshold: 0.25
+        threshold: 0.3
     };
 
     const callbackFunction = (entries: IntersectionObserverEntry[]) => {
@@ -157,7 +157,7 @@ export default function AboutMe() {
                 <h2 className="flex gap-2 text-start text-lg font-semibold text-white">Work Experience <Image src="/images/rocket-dynamic-premium.png" className="inline-block w-8" /></h2>
                 <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6" variants={staggerItem}>
                     {careerTimeline.map((item, index) => (
-                        <AcrylicCard
+                        <TextDesignCard
                             key={index}
                             index={index}
                             year={item.year}

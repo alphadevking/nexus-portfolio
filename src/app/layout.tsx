@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Space_Mono } from 'next/font/google';
 import './globals.css';
 import { AppWrap } from '@/components';
-import React from 'react';
+import React, { Suspense } from 'react';
 
 const space_mono = Space_Mono({ subsets: ['latin'], preload: true, weight: ['400', '700'] });
 
@@ -22,9 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={space_mono.className}>
-        <AppWrap>
-          {children}
-        </AppWrap>
+        <Suspense fallback={<div>Loading....</div>}>
+          <AppWrap>
+            {children}
+          </AppWrap>
+        </Suspense>
       </body>
     </html>
   );

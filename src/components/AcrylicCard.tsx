@@ -80,7 +80,7 @@ const TextDesignCard = ({ year, title, company, description, index, skill, image
 
     return (
         <motion.div
-            className={`relative flex flex-col gap-4 md:my-5 p-5 bg-inherit backdrop-blur-xl rounded-xl shadow-xl border text-xs border-purple-200/50 transition-transform duration-300 ${isEven ? 'ml-auto' : 'mr-auto'} ${isEven ? 'rotate-1' : '-rotate-1'} w-full max-w-md md:max-w-lg lg:max-w-2xl`}
+            className={`relative grid md:flex flex-col gap-4 md:my-5 p-5 bg-inherit backdrop-blur-xl rounded-xl shadow-xl border text-xs border-purple-200/50 transition-transform duration-300 ${isEven ? 'ml-auto' : 'mr-auto'} ${isEven ? 'rotate-1' : '-rotate-1'} w-full max-w-md md:max-w-lg lg:max-w-2xl`}
             initial="hidden"
             animate="visible"
             whileHover={{ scale: 1.05, rotateY: isEven ? 5 : -5 }}
@@ -98,12 +98,6 @@ const TextDesignCard = ({ year, title, company, description, index, skill, image
                 }
             }}
         >
-            <div className="flex flex-col justify-center gap-2">
-                {year && <div className="text-lg font-bold text-purple-300">{year}</div>}
-                {title && <div className="font-normal opacity-70 text-white text-md">{title} {company && <span>at <strong className="text-purple-500 font-bold">{company}</strong></span>}</div>}
-                {description && <div className="text-white text-sm">{description}</div>}
-                {skill && <div className="text-white text-sm">{skill}</div>}
-            </div>
             {image && (
                 <motion.div className="w-full h-32 overflow-hidden rounded-lg">
                     <motion.img
@@ -116,6 +110,13 @@ const TextDesignCard = ({ year, title, company, description, index, skill, image
                     />
                 </motion.div>
             )}
+            <div className="flex flex-col justify-center gap-2">
+                {year && <div className="text-lg font-bold text-purple-300">{year}</div>}
+                {title && <div className="font-normal opacity-70 text-white text-md">{title} {company && <span>at <strong className="text-purple-500 font-bold">{company}</strong></span>}</div>}
+                {description && <div className="text-white text-sm">{description}</div>}
+                {skill && <div className="text-white text-sm">{skill}</div>}
+            </div>
+            
             <FaStar style={{ ...starPosition, position: 'absolute', color: starColor }} className="w-6 h-6" />
             <FaTimesCircle style={{ ...timesCirclePosition, position: 'absolute', color: timesCircleColor }} className="w-6 h-6" />
             <FaSquare style={{ ...squarePosition, position: 'absolute', color: squareColor }} className="w-8 h-8" />

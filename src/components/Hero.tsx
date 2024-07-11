@@ -101,13 +101,13 @@ export default function Hero() {
 
                 <Swiper
                     ref={swiperRef}
-                    spaceBetween={20}
+                    spaceBetween={10}
                     slidesPerView={2}
                     onSlideChange={onSlideChange}
-                    className="md:w-2/3 mt-10 md:mt-0 relative w-full h-96 rounded-xl overflow-hidden"
+                    className="md:w-2/3 mt-10 md:mt-0 w-full h-96 rounded-xl overflow-hidden"
                 >
                     {images.map((image, index) => (
-                        <SwiperSlide key={index} className="rounded-xl group relative overflow-hidden">
+                        <SwiperSlide key={index} className="overflow-hidden relative group">
                             <Image
                                 src={image.src}
                                 alt={image.alt}
@@ -119,7 +119,7 @@ export default function Hero() {
                                 initial={{ y: 50, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ duration: 0.5, delay: 0.3, ease: "easeInOut" }}
-                                className="absolute bottom-0 justify-center grid w-full bg-black/50 backdrop-blur py-3 text-white uppercase tracking-wider text-[11px] font-semibold group-hover:scale-105 duration-500"
+                                className="absolute bottom-0 z-0 justify-center grid w-[110%] bg-black/50 -ml-1 md:-ml-5 backdrop-blur py-3 text-white uppercase tracking-wider text-[10px] font-semibold group-hover:scale-105 duration-500"
                             >
                                 {image.alt}
                             </motion.div>
