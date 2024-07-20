@@ -2,6 +2,7 @@
 import { Provider } from "react-redux";
 import { SessionProvider } from "next-auth/react";
 import { NextUIProvider } from "@nextui-org/react";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
 import store from "@/store";
 import CustomCursor from "./CustomCursor";
 import "@/components/customScrollbar.css";
@@ -15,8 +16,10 @@ function AppWrap({ children }: { children: React.ReactNode; }) {
         <Provider store={store}>
             <SessionProvider>
                 <NextUIProvider navigate={router.push}>
-                    <CustomCursor />
-                    {children}
+                    <NextThemesProvider attribute="class" defaultTheme="dark" enableSystem>
+                        <CustomCursor />
+                        {children}
+                    </NextThemesProvider>
                 </NextUIProvider>
             </SessionProvider>
         </Provider>

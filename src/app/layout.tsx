@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import { Space_Mono } from 'next/font/google';
+import { Lato } from 'next/font/google';
 import './globals.css';
 import { AppWrap } from '@/components';
 import React, { Suspense } from 'react';
 
-const space_mono = Space_Mono({ subsets: ['latin'], preload: true, weight: ['400', '700'] });
+const font = Lato({ subsets: ['latin'], preload: true, weight: ['100','300','400', '700', '900'] });
 
 export const metadata: Metadata = {
   title: 'Nexus Portfolio | Favour Orukpe ©️',
@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={space_mono.className}>
+      <body className={font.className}>
         <Suspense fallback={<div>Loading....</div>}>
           <AppWrap>
             {children}

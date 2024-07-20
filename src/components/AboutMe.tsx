@@ -68,7 +68,7 @@ export default function AboutMe() {
     };
 
     return (
-        <section className="flex flex-col items-center justify-center min-h-screen p-10 bg-purple-900/5 bg-opacity-90">
+        <section className="flex flex-col items-center justify-center min-h-screen p-10 bg-opacity-90">
             <motion.div
                 className="w-full max-w-7xl"
                 ref={refs.about}
@@ -78,7 +78,7 @@ export default function AboutMe() {
                 animate={controls.about}
             >
                 <motion.h1
-                    className="text-3xl font-bold border-b-4 border-purple-700 pb-2 -mb-4 inline-block text-white"
+                    className="text-3xl font-bold border-b-4 border-purple-700 pb-2 -mb-4 inline-block"
                     variants={staggerItem}
                 >
                     About
@@ -91,19 +91,18 @@ export default function AboutMe() {
                 initial="hidden"
                 animate={controls.about}
             >
-                <motion.div className="grid grid-flow-col gap-5" variants={staggerItem}>
+                <motion.div className="grid grid-flow-col gap-5 items-center" variants={staggerItem}>
                     <Image
                         src={"/images/alpha.jpg"}
                         alt="Favour Orukpe"
-                        className="w-32 h-full my-5 object-cover"
-                        style={{ opacity: 0.5 }}
+                        className="w-32 h-[350px] my-5 object-cover dark:opacity-50"
                     />
 
                     <motion.div className="md:col-span-2 m-auto h-fit pt-5">
-                        <h2 className="text-sm">alphadevking</h2>
-                        <ScrollShadow className="w-[300px] h-[300px]">
+                        <h2 className="text-md">alphadevking</h2>
+                        <ScrollShadow className="w-[300px] h-[350px]">
                             <motion.p
-                                className="mt-5 text-xs text-purple-100"
+                                className="mt-5 text-sm"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ duration: 0.5, delay: 0.3, ease: "easeInOut" }}
@@ -112,7 +111,7 @@ export default function AboutMe() {
                                 Software Engineer, Full-Stack Developer, Graphic Designer, and Project Manager, with a passion for building scalable, dynamic, and robust web applications. I excel in both frontend and backend development, specializing in technologies such as React, NextJS, TypeScript, PHP, Python, ASP.NET, and many more.
                             </motion.p>
                             <motion.p
-                                className="mt-5 text-xs text-white"
+                                className="mt-5 text-sm"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ duration: 0.5, delay: 0.5, ease: "easeInOut" }}
@@ -132,7 +131,7 @@ export default function AboutMe() {
                     ref={refs.softSkills}
                     data-section="softSkills"
                 >
-                    <h2 className="text-start text-lg font-semibold text-white">Soft Skills {`I've`} Garnered</h2>
+                    <h2 className="text-start text-lg font-semibold">Soft Skills {`I've`} Garnered</h2>
                     <motion.div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" variants={staggerItem}>
                         {softSkills.map((skill, index) => (
                             <TextDesignCard
@@ -154,7 +153,7 @@ export default function AboutMe() {
                 ref={refs.workExperience}
                 data-section="workExperience"
             >
-                <h2 className="flex gap-2 text-start text-lg font-semibold text-white">Work Experience <Image src="/images/rocket-dynamic-premium.png" className="inline-block w-8" /></h2>
+                <h2 className="flex gap-2 text-start text-lg font-semibold">Work Experience <Image src="/images/rocket-dynamic-premium.png" className="inline-block w-8" /></h2>
                 <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6" variants={staggerItem}>
                     {careerTimeline.map((item, index) => (
                         <TextDesignCard
@@ -178,7 +177,7 @@ export default function AboutMe() {
                 ref={refs.skills}
                 data-section="skills"
             >
-                <h2 className="flex gap-2 text-start text-lg font-semibold text-white">Skills</h2>
+                <h2 className="flex gap-2 text-start text-lg font-semibold">Skills</h2>
                 <motion.div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" variants={staggerItem}>
                     {skills.map((skill, index) => (
                         <AcrylicCard
@@ -199,7 +198,7 @@ export default function AboutMe() {
                 ref={refs.certifications}
                 data-section="certifications"
             >
-                <h2 className="flex gap-2 text-start text-lg font-semibold text-white">Certifications</h2>
+                <h2 className="flex gap-2 text-start text-lg font-semibold">Certifications</h2>
                 <motion.div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" variants={staggerItem}>
                     {certifications.map((cert, index) => (
                         <AcrylicCard
@@ -222,7 +221,7 @@ export default function AboutMe() {
                 ref={refs.testimonials}
                 data-section="testimonials"
             >
-                <h2 className="flex gap-2 text-start text-lg font-semibold text-white">Testimonials/Recommendations</h2>
+                <h2 className="flex gap-2 text-start text-lg font-semibold">Testimonials/Recommendations</h2>
                 <motion.div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" variants={staggerItem}>
                     {testimonials.map((testimonial, index) => (
                         <TestimonialCard key={index} testimonial={testimonial} />

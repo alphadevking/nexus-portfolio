@@ -15,7 +15,7 @@ export default function Footer() {
                         height={30}
                         className="rounded-full"
                     />
-                    <span className="text-white text-xs mt-2">Made by Alphadevking</span>
+                    <span className="text-sm mt-2">Made by Alphadevking</span>
                 </div>
                 <ul className="flex flex-wrap justify-center gap-4 md:gap-8">
                     {socials.map((social, index) => (
@@ -29,11 +29,11 @@ export default function Footer() {
                                 href={social.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-white hover:text-gray-400 transition duration-300 flex flex-col items-center"
+                                className="hover:text-gray-400 transition duration-300 flex flex-col items-center"
                             >
                                 <social.icon size="1.5em" />
                                 {social.text && (
-                                    <span className="text-xs mt-1">{social.text}</span>
+                                    <span className="text-sm mt-1">{social.text}</span>
                                 )}
                             </a>
                         </motion.li>

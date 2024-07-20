@@ -26,7 +26,7 @@ const AcrylicCard = ({ year, title, company, description, index, skill, image }:
 
     return (
         <motion.div
-            className={`relative flex gap-4 md:my-5 p-5 bg-inherit backdrop-blur-xl rounded-xl shadow-xl border text-xs border-purple-200/50 transition-transform duration-300 ${isEven ? 'ml-auto' : 'mr-auto'} ${isEven ? 'rotate-1' : '-rotate-1'} w-full max-w-md md:max-w-lg lg:max-w-2xl`}
+            className={`relative flex gap-4 md:my-5 p-5 bg-inherit backdrop-blur-xl rounded-xl shadow-xl border text-sm dark:border-purple-200/50 transition-transform duration-300 ${isEven ? 'ml-auto' : 'mr-auto'} ${isEven ? 'rotate-1' : '-rotate-1'} w-full max-w-md md:max-w-lg lg:max-w-2xl`}
             initial="hidden"
             animate="visible"
             whileHover={{ scale: 1.05, rotateY: isEven ? 5 : -5 }}
@@ -57,10 +57,10 @@ const AcrylicCard = ({ year, title, company, description, index, skill, image }:
                 </motion.div>
             )}
             <div className="flex flex-col justify-center gap-2">
-                {year && <div className="text-sm text-purple-300">{year}</div>}
-                {title && <div className="font-normal opacity-70 text-white text-sm">{title} {company && <span>at <strong className="text-purple-500 font-bold">{company}</strong></span>}</div>}
-                {description && <div className="text-white">{description}</div>}
-                {skill && <div className="text-white">{skill}</div>}
+                {year && <div className="text-sm">{year}</div>}
+                {title && <div className="font-normal opacity-70 text-sm">{title} {company && <span>at <strong className="text-primary dark:text-purple-700 font-bold">{company}</strong></span>}</div>}
+                {description && <div className="text-primary dark:text-white">{description}</div>}
+                {skill && <div className="text-primary dark:text-white">{skill}</div>}
             </div>
             <FaStar style={{ ...starPosition, position: 'absolute', color: starColor }} className="w-6 h-6" />
             <FaTimesCircle style={{ ...timesCirclePosition, position: 'absolute', color: timesCircleColor }} className="w-6 h-6" />
@@ -80,7 +80,7 @@ const TextDesignCard = ({ year, title, company, description, index, skill, image
 
     return (
         <motion.div
-            className={`relative grid md:flex flex-col gap-4 md:my-5 p-5 bg-inherit backdrop-blur-xl rounded-xl shadow-xl border text-xs border-purple-200/50 transition-transform duration-300 ${isEven ? 'ml-auto' : 'mr-auto'} ${isEven ? 'rotate-1' : '-rotate-1'} w-full max-w-md md:max-w-lg lg:max-w-2xl`}
+            className={`relative grid md:flex items-center gap-4 md:my-5 p-5 bg-inherit backdrop-blur-xl rounded-xl shadow-xl border text-sm dark:border-purple-200/50 transition-transform duration-300 ${isEven ? 'ml-auto' : 'mr-auto'} ${isEven ? 'rotate-1' : '-rotate-1'} w-full max-w-md md:max-w-lg lg:max-w-2xl`}
             initial="hidden"
             animate="visible"
             whileHover={{ scale: 1.05, rotateY: isEven ? 5 : -5 }}
@@ -99,7 +99,7 @@ const TextDesignCard = ({ year, title, company, description, index, skill, image
             }}
         >
             {image && (
-                <motion.div className="w-full h-32 overflow-hidden rounded-lg">
+                <motion.div className="w-full h-32 overflow-hidden rounded-lg z-0">
                     <motion.img
                         src={image}
                         alt={title}
@@ -111,10 +111,10 @@ const TextDesignCard = ({ year, title, company, description, index, skill, image
                 </motion.div>
             )}
             <div className="flex flex-col justify-center gap-2">
-                {year && <div className="text-lg font-bold text-purple-300">{year}</div>}
-                {title && <div className="font-normal opacity-70 text-white text-md">{title} {company && <span>at <strong className="text-purple-500 font-bold">{company}</strong></span>}</div>}
-                {description && <div className="text-white text-sm">{description}</div>}
-                {skill && <div className="text-white text-sm">{skill}</div>}
+                {year && <div className="text-lg font-bold text-primary dark:text-purple-300">{year}</div>}
+                {title && <div className="font-normal opacity-70 text-md">{title} {company && <span>at <strong className="text-primary dark:text-purple-500 text-medium font-bold">{company}</strong></span>}</div>}
+                {description && <div className="text-sm">{description}</div>}
+                {skill && <div className="text-medium">{skill}</div>}
             </div>
             
             <FaStar style={{ ...starPosition, position: 'absolute', color: starColor }} className="w-6 h-6" />
@@ -141,7 +141,7 @@ interface TestimonialCardProps {
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
     return (
-        <div className="max-w-xl mx-auto bg-purple-900/5 backdrop-blur-lg rounded-xl shadow-md p-6 relative overflow-hidden">
+        <div className="max-w-xl mx-auto bg-purple-900/10 dark:bg-purple-900/10 backdrop-blur-lg rounded-xl shadow-md p-6 relative overflow-hidden">
             <div className="flex flex-col items-center mb-4">
                 <img
                     className="w-32 h-32 rounded-full border-4 border-purple-200 mb-4"
@@ -149,8 +149,8 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
                     alt={testimonial.name}
                 />
                 <div className="text-center">
-                    <p className="text-gray-300 italic mb-4">{`"${testimonial.text}"`}</p>
-                    <div className="gap-2 items-center flex justify-center text-xl font-bold text-white">
+                    <p className="text-primary dark:text-gray-300 italic mb-4">{`"${testimonial.text}"`}</p>
+                    <div className="gap-2 items-center flex justify-center text-xl font-bold">
                         <span>
                             {testimonial.name}
                         </span>
@@ -158,8 +158,8 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
                             <BsArrowUpRightSquareFill />
                         </Link>
                     </div>
-                    <div className="text-sm text-white mb-2">{testimonial.position}</div>
-                    <p className="text-gray-300 mt-2 text-xs">{testimonial.date}</p>
+                    <div className="text-sm mb-2">{testimonial.position}</div>
+                    <p className="text-primary dark:text-gray-300 mt-2 text-sm">{testimonial.date}</p>
                 </div>
             </div>
         </div>

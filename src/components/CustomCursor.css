@@ -8,7 +8,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background-color: white;
+  background-color: inherit;
   position: fixed;
   top: 0;
   left: 0;
@@ -23,7 +23,7 @@ body {
   height: 40px;
   /* Adjust size for the follower */
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.202);
+  background-color: #770d9527;
   /* Light gray with transparency */
   position: fixed;
   top: -18px;

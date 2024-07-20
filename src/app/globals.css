@@ -4,14 +4,14 @@
 
 :root {
   scroll-behavior: smooth;
-  background: linear-gradient(76deg, #0e0e14, #040405, #030714, #030212, #1b171c, #141012, #0b0c0f, #060216);
+  /* background: linear-gradient(76deg, #0e0e14, #040405, #030714, #030212, #1b171c, #141012, #0b0c0f, #060216);
   background-size: 1600% 1600%;
-  color: white;
+  color: white; */
 
-  -webkit-animation: radiate 32s ease infinite;
+  /* -webkit-animation: radiate 32s ease infinite;
   -moz-animation: radiate 32s ease infinite;
   -o-animation: radiate 32s ease infinite;
-  animation: radiate 32s ease infinite;
+  animation: radiate 32s ease infinite; */
 }
 
 @-webkit-keyframes radiate {

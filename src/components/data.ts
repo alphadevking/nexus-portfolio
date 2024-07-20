@@ -21,7 +21,7 @@ const images = [
 
 const careerTimeline = [
     {
-        year: "2024 - Present",
+        year: "March 2024 - Present",
         title: "IT Specialist (Volunteering)",
         company: "Delta State Contributory Health Commission, Asaba",
         description: "Providing ICT Support for the other departments of the Commission. Data sourcing, analysis, and visualization.",
@@ -29,7 +29,7 @@ const careerTimeline = [
     },
     {
         year: "2023 - Present",
-        title: "Full-Stack Software Engineer",
+        title: "Team Lead & Full-Stack Software Engineer",
         company: "Alpha Developer Systems",
         description: "Providing purpose-driven solutions for technology and design problems as a team lead. Overseeing operations, implementing design structures, and building software projects.",
         image: "/images/sample2.jpg"

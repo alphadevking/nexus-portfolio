@@ -46,7 +46,7 @@ export default function Hero() {
 
     return (
         <>
-            <header className="flex flex-col md:flex-row items-center justify-between min-h-screen p-10 pt-16 bg-purple-900/5 text-white gap-2">
+            <header className="flex flex-col md:flex-row items-center justify-between min-h-screen p-10 pt-16 bg-purple-900/5 gap-2">
                 <div className="md:w-1/3 flex flex-col items-start gap-0.5">
                     <motion.h4
                         className="text-lg font-semibold"
@@ -75,14 +75,14 @@ export default function Hero() {
 
                     <div className="flex items-center mt-4">
                         <button
-                            className={`border-2 border-white text-white p-2 rounded-full mr-2 ${isBeginning ? 'opacity-50 cursor-not-allowed' : ''}`}
+                            className={`border-2 border-black dark:border-white p-2 rounded-full mr-2 ${isBeginning ? 'opacity-50 cursor-not-allowed' : ''}`}
                             onClick={handlePrev}
                             disabled={isBeginning}
                         >
                             <FaChevronLeft />
                         </button>
                         <button
-                            className={`border-2 border-white text-white p-2 rounded-full ${isEnd ? 'opacity-50 cursor-not-allowed' : ''}`}
+                            className={`border-2 border-black dark:border-white p-2 rounded-full ${isEnd ? 'opacity-50 cursor-not-allowed' : ''}`}
                             onClick={handleNext}
                             disabled={isEnd}
                         >
@@ -91,7 +91,7 @@ export default function Hero() {
                     </div>
                     <div className="relative w-[80%] mt-5 h-1 rounded-full overflow-hidden">
                         <motion.div
-                            className="absolute top-0 left-0 h-full bg-purple-100"
+                            className="absolute top-0 left-0 h-full bg-black dark:bg-purple-100"
                             initial={{ width: 0 }}
                             animate={progressControls}
                             transition={{ duration: 0.5 }}
@@ -119,7 +119,7 @@ export default function Hero() {
                                 initial={{ y: 50, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ duration: 0.5, delay: 0.3, ease: "easeInOut" }}
-                                className="absolute bottom-0 z-0 justify-center grid w-[110%] bg-black/50 -ml-1 md:-ml-5 backdrop-blur py-3 text-white uppercase tracking-wider text-[10px] font-semibold group-hover:scale-105 duration-500"
+                                className="absolute bottom-0 z-0 justify-center grid w-[110%] bg-black/50 text-white -ml-1 md:-ml-5 backdrop-blur py-3 uppercase tracking-wider text-[10px] font-semibold group-hover:scale-105 duration-500"
                             >
                                 {image.alt}
                             </motion.div>
